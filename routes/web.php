@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Facultades;
+use App\Http\Controllers\Programas;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dashboard', [HomeController::class, 'index']);
+
+Route::get('/facultades/listado', [Facultades::class, 'index']);
+
+Route::get('/programas/listado', [Programas::class, 'index']);
